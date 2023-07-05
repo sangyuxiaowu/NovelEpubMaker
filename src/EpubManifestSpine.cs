@@ -31,15 +31,15 @@ namespace NovelEpubMaker{
         public string Generate(){
             var sb = new StringBuilder();
             var spine = new StringBuilder();
-            sb.AppendLine("<manifest>");
-            sb.AppendLine("<item id=\"ncx\" href=\"toc.ncx\" media-type=\"application/x-dtbncx+xml\" />");
-            sb.AppendLine("<item id=\"style\" href=\"Text/style.css\" media-type=\"text/css\" />");
+            sb.Append(@"<manifest>
+    <item id=""ncx"" href=""toc.ncx"" media-type=""application/x-dtbncx+xml"" />
+    <item id=""style"" href=""Text/style.css"" media-type=""text/css"" />");
             spine.AppendLine("<spine toc=\"ncx\">");
 
             if (HasCover)
             {
-                sb.AppendLine("<item id=\"cover\" href=\"Text/cover.html\" media-type=\"application/xhtml+xml\" />");
-                sb.AppendLine("<item id=\"cover-image\" href=\"Images/cover.jpg\" media-type=\"image/jpeg\" />");
+                sb.Append(@"<item id=""cover"" href=""Text/cover.html"" media-type=""application/xhtml+xml"" />
+    <item id=""cover-image"" href=""Images/cover.jpg"" media-type=""image/jpeg"" />");
                 spine.AppendLine("<itemref idref=\"cover\" linear=\"yes\" />");
             }
             for (int i = 1; i <= ChapterCount; i++)
@@ -50,6 +50,12 @@ namespace NovelEpubMaker{
             }
             sb.AppendLine("</manifest>");
             spine.AppendLine("</spine>");
+            if (HasCover)
+            {
+                spine.Append(@"<guide>
+                <reference type=""cover"" title=""封面"" href=""Text/cover.html"" />
+                </guide>");
+            }
             return sb.ToString() + spine.ToString();
         }
 
