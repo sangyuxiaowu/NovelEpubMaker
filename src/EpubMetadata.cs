@@ -55,6 +55,11 @@ namespace NovelEpubMaker{
         public string ISBN { get; set; } = string.Empty;
 
         /// <summary>
+        /// 权限描述
+        /// </summary>
+        public string Rights { get; set; } = string.Empty;
+
+        /// <summary>
         /// 出版日期
         /// </summary>
         public string PublishDate { get; set; } = string.Empty;
@@ -127,6 +132,10 @@ namespace NovelEpubMaker{
 
             if(!string.IsNullOrWhiteSpace(Source)){
                 sb.AppendLine($"<dc:source>{Source}</dc:source>");
+            }
+
+            if(!string.IsNullOrWhiteSpace(Rights)){
+                sb.AppendLine($"<dc:rights>{Rights}</dc:rights>");
             }
 
             if(!string.IsNullOrWhiteSpace(ModifyDate)){
