@@ -8,8 +8,8 @@
 	  <Version>1.0.1</Version>
 	  <Authors>SangSQ(桑世强)</Authors>
 	  <Description>Novel epub production tool library. 小说 epub 电子书制作工具类库</Description>
-	  <RepositoryUrl>https://github.com/sangyuxiaowu/NovelEpub</RepositoryUrl>
-	  <PackageProjectUrl>https://github.com/sangyuxiaowu/NovelEpub</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/sangyuxiaowu/NovelEpubMaker</RepositoryUrl>
+	  <PackageProjectUrl>https://github.com/sangyuxiaowu/NovelEpubMaker</PackageProjectUrl>
 	  <PackageTags>Novel,Epub</PackageTags>
 	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>

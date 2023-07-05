@@ -1,5 +1,7 @@
 # NovelEpubMaker
 
+[![NuGet version (NovelEpubMaker)](https://img.shields.io/nuget/v/NovelEpubMaker.svg?style=flat-square)](https://www.nuget.org/packages/NovelEpubMaker/)
+
 Novel epub production tool library.
 
 小说 epub 电子书制作工具类库
@@ -11,6 +13,12 @@ Novel Epub Maker is a .NET library for creating novel epub e-books. It does not 
 Novel Epub Maker 是一个用于制作小说 epub 电子书的 .NET 类库。它不依赖任何第三方库，轻巧使用方便，可以快速适用于小说制作 ebup 和 txt 转 epub 等场景。
 
 ## Usage 使用方法
+
+Add this package.
+
+```
+Install-Package NovelEpubMaker
+```
 
 First, create a `List<NovelContent>` object to store the content of the novel's chapters:
 
