@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <Version>1.0.1</Version>
+	  <Authors>SangSQ(桑世强)</Authors>
+	  <Description>Novel epub production tool library. 小说 epub 电子书制作工具类库</Description>
+	  <RepositoryUrl>https://github.com/sangyuxiaowu/NovelEpub</RepositoryUrl>
+	  <PackageProjectUrl>https://github.com/sangyuxiaowu/NovelEpub</PackageProjectUrl>
+	  <PackageTags>Novel,Epub</PackageTags>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+		<None Include="..\LICENSE.txt">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+</Project>
