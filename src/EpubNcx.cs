@@ -54,7 +54,7 @@ namespace NovelEpubMaker{
                     <navLabel>
                         <text>封面</text>
                     </navLabel>
-                    <content src=""Text/cover.html"" />
+                    <content src=""Text/cover.xhtml"" />
                     </navPoint>");
             }
             var i = 1;

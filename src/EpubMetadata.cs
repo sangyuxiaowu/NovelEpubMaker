@@ -139,11 +139,11 @@ namespace NovelEpubMaker{
             }
 
             if(!string.IsNullOrWhiteSpace(ModifyDate)){
-                sb.AppendLine($"<meta content=\"{ModifyDate}\" name=\"calibre:timestamp\" />");
+                sb.AppendLine($"<meta content=\"{ModifyDate}\" name=\"dcterms:modified\" />");
             }else{
-                sb.AppendLine($"<meta content=\"{DateTime.Now:yyyy-MM-ddTHH:mm:ss.fff000+00:00}\" name=\"calibre:timestamp\" />");
+                sb.AppendLine($"<meta content=\"{DateTime.Now:yyyy-MM-ddTHH:mm:ss.fff000+00:00}\" name=\"dcterms:modified\" />");
             }
-            sb.AppendLine("</metadata>");
+            sb.AppendLine("<meta name=\"cover\" content=\"cover.jpg\"/></metadata>");
             return sb.ToString();
         }
 

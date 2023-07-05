@@ -112,7 +112,7 @@ namespace NovelEpubMaker
                         await coverImageStream.WriteAsync(Convert.FromBase64String(CoverBase64));
                     }
 
-                    var coverHtml = zip.CreateEntry("OEBPS/Text/cover.html");
+                    var coverHtml = zip.CreateEntry("OEBPS/Text/cover.xhtml");
                     using(var coverHtmlStream = coverHtml.Open()){
                         await coverHtmlStream.WriteAsync(Encoding.UTF8.GetBytes(EpubBase.CoverHtml));
                     }

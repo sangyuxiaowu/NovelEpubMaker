@@ -32,20 +32,20 @@ namespace NovelEpubMaker{
             var sb = new StringBuilder();
             var spine = new StringBuilder();
             sb.Append(@"<manifest>
-    <item id=""ncx"" href=""toc.ncx"" media-type=""application/x-dtbncx+xml"" />
-    <item id=""style"" href=""Text/style.css"" media-type=""text/css"" />");
+    <item href=""toc.ncx"" id=""ncx"" media-type=""application/x-dtbncx+xml"" />
+    <item href=""Styles/stylesheet.css"" id=""stylesheet"" media-type=""text/css"" />");
             spine.AppendLine("<spine toc=\"ncx\">");
 
             if (HasCover)
             {
-                sb.Append(@"<item id=""cover"" href=""Text/cover.html"" media-type=""application/xhtml+xml"" />
-    <item id=""cover-image"" href=""Images/cover.jpg"" media-type=""image/jpeg"" />");
-                spine.AppendLine("<itemref idref=\"cover\" linear=\"yes\" />");
+                sb.Append(@"<item href=""Text/cover.xhtml"" id=""cover.xhtml"" media-type=""application/xhtml+xml"" />
+    <item href=""Images/cover.jpg"" id=""cover.jpg"" media-type=""image/jpeg"" />");
+                spine.AppendLine("<itemref idref=\"cover.xhtml\" linear=\"yes\" />");
             }
             for (int i = 1; i <= ChapterCount; i++)
             {
                 var id = i.ToString().PadLeft(5, '0');
-                sb.AppendLine($"<item id=\"{id}\" href=\"Text/{id}.html\" media-type=\"application/xhtml+xml\" />");
+                sb.AppendLine($"<item href=\"Text/{id}.html\" id=\"{id}\" media-type=\"application/xhtml+xml\" />");
                 spine.AppendLine($"<itemref idref=\"{id}\" linear=\"yes\" />");
             }
             sb.AppendLine("</manifest>");
@@ -53,7 +53,7 @@ namespace NovelEpubMaker{
             if (HasCover)
             {
                 spine.Append(@"<guide>
-                <reference type=""cover"" title=""封面"" href=""Text/cover.html"" />
+                <reference type=""cover"" title=""封面"" href=""Text/cover.xhtml"" />
                 </guide>");
             }
             return sb.ToString() + spine.ToString();
